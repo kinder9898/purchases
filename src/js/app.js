@@ -49,13 +49,13 @@ const purchases = [];
 buttonEl.onclick = evt => {
     evt.preventDefault();
 
-    const value = priceEl.value;
+    const value = parseInt(priceEl.value, 10);
     const category = addInputCategoryEl.value;
 
     const purchase = new Purchases(value, category);
     purchases.push(purchase);
 
-    totalSum += parseInt(value, 10);
+    totalSum += value;
     sumEl.textContent = `${totalSum}`;
 
     const purchaseEl = document.createElement('li')
@@ -67,7 +67,7 @@ buttonEl.onclick = evt => {
     `;
 
     purchaseEl._purchase = purchase;
-    
+
     purchasesListEl.insertBefore(purchaseEl, purchasesListEl.firstElementChild);
 
     priceEl.value = '';
@@ -79,9 +79,9 @@ buttonEl.onclick = evt => {
 
     addRemoveButtonEl.onclick = () => {
         purchaseEl.remove();
-        totalSum-=value;
+        totalSum -= value;
 
-        sumEl.textContent = `${totalSum}`;  
+        sumEl.textContent = `${totalSum}`;
     }
 
     const addUpButtonEl = purchaseEl.querySelector('[data-action=up]');
