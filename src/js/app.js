@@ -68,7 +68,7 @@ buttonEl.onclick = evt => {
 
     purchaseEl._purchase = purchase;
     
-    purchasesListEl.insertBefore(purchaseEl, purchasesListEl.firstChild);
+    purchasesListEl.insertBefore(purchaseEl, purchasesListEl.firstElementChild);
 
     priceEl.value = '';
     addInputCategoryEl.value = '';
