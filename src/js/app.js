@@ -1,4 +1,4 @@
-class Purchases {
+class Purchase {
     constructor(value, category) {
         this.value = value;
         this.category = category;
@@ -52,7 +52,7 @@ buttonEl.onclick = evt => {
     const value = parseInt(priceEl.value, 10);
     const category = addInputCategoryEl.value;
 
-    const purchase = new Purchases(value, category);
+    const purchase = new Purchase(value, category);
     purchases.push(purchase);
 
     totalSum += value;
